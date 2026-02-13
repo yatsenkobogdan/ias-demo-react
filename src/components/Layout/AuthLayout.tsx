@@ -1,15 +1,17 @@
-import type { PropsWithChildren } from "react";
+import { Outlet } from "react-router-dom";
+import { TopMenu } from "../TopMenu/TopMenu";
 import Container from "./Container";
-import { TopMenu } from "./TopMenu/TopMenu";
 
-export default function AuthLayout({ children }: PropsWithChildren) {
+export default function AuthLayout() {
   return (
     <div className="min-h-screen bg-[#F3F4F6]">
-      <TopMenu />
+      <TopMenu variant="auth" />
 
       <main className="py-16">
         <Container>
-          <div className="flex justify-center">{children}</div>
+          <div className="flex justify-center">
+            <Outlet />
+          </div>
         </Container>
       </main>
     </div>

@@ -1,8 +1,16 @@
-export function MaterialPage() {
+import RightSidebar from "./components/RightSidebar.tsx";
+
+export default function MaterialPage() {
   return (
-    <div className="min-h-screen bg-slate-50 p-10 font-montserrat">
-      <div className="mx-auto max-w-[1100px] rounded-md7 border border-inputBorder bg-white p-6">
-        Материал: заглушка (доступно после логина)
+    <div className="px-6 py-6">
+      <div className="flex items-start gap-6">
+        <div className="flex-1">
+          <div className="rounded-xl bg-white p-6 shadow-sm">
+            Основной контент (в работе)
+          </div>
+        </div>
+        
+        <RightSidebar />
       </div>
     </div>
   );

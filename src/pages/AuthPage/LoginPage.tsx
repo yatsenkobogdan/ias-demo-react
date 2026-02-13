@@ -3,6 +3,7 @@ import { Button } from "@/components/base/Button";
 import { Input } from "@/components/base/Input";
 import { Auth } from "@/services/Auth";
 import { login } from "@/services/fetchers/authFetcher";
+import { Session } from "@/services/Session";
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +11,6 @@ export function LoginPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -18,7 +18,8 @@ export function LoginPage() {
     try {
       const res = await login({ email, password });
       Auth.setToken(res.token);
-      navigate("/material/1", { replace: true });
+      Session.setUser(res.user);
+      navigate("/material/1", { replace: true }); 
     } catch (e) {
       console.error(e)
     }
