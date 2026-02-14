@@ -10,7 +10,7 @@ export { default as BurgerIcon } from "@/assets/icons/burger.svg?react";
 export { default as FavoritesIcon } from "@/assets/icons/favorites.svg?react";
 export { default as GraphIcon } from "@/assets/icons/graph.svg?react";
 export { default as HelpIcon } from "@/assets/icons/help.svg?react";
-export { default as OrderIcon } from "@/assets/icons/order.svg?react";
+export { default as CompareIcon } from "@/assets/icons/compare.svg?react";
 export { default as SettingsIcon } from "@/assets/icons/settings.svg?react";
 export { default as SomeSquareAndCircleIcon } from "@/assets/icons/someSquareAndCircle.svg?react";
 
@@ -24,3 +24,10 @@ export { default as AddIcon } from "@/assets/icons/add.svg?react";
 export { default as HorizontalBurgerIcon } from "@/assets/icons/horizontalBurger.svg?react";
 export { default as BellIcon } from "@/assets/icons/bell.svg?react";
 export { default as MoonIcon } from "@/assets/icons/moon.svg?react";
+
+// Card Icons
+export { default as DownloadIcon } from "@/assets/icons/download.svg?react";
+export { default as LinkIcon } from "@/assets/icons/link.svg?react";
+export { default as BookmarkIcon } from "@/assets/icons/bookmark.svg?react";
+export { default as ChatIcon } from "@/assets/icons/chat.svg?react";
+export { default as WarningIcon } from "@/assets/icons/warning.svg?react";

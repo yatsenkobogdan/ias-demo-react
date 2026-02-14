@@ -3,38 +3,37 @@ import NavCard from "./NavCard";
 
 export default function MainSection() {
   return (
-    <section className="w-full bg-white font-inter">
-      <div className="relative mx-auto px-[200px] pt-6 pb-12">
-        <img
-          src={atom}
-          alt=""
-          className="pointer-events-none select-none absolute z-20
-            left-1/2 top-[99px] w-[620px] -translate-x-1/2"
-        />
+    <section className="w-full bg-white">
+      <div className="mx-auto px-6 pt-6 md:px-12 xl:px-[200px]">
+        <div className="text-[34px] leading-[110%] text-slate-800 md:text-[46px]">
+          Информационно-аналитическая система
+        </div>
 
-        <div className="relative z-10">
-          <div className="text-[46px] font-normal leading-[110%] text-slate-800">
-            Информационно-аналитическая система
+        <h1 className="mt-2 text-[52px] leading-[105%] text-primary md:text-[80px]">
+          Цифровое материаловедение
+        </h1>
+
+        <div className="mt-6 flex items-start justify-between gap-8">
+          <div className="min-w-0 flex-1">
+            <p className="max-w-[520px] text-[16px] leading-[150%] text-slate-600 md:text-[18px]">
+              Поддержка деятельности Головного центра компетенций в области материалов
+              и технологий при реализации хранения, анализа и расчета значений свойств
+              существующих и проектирования новых материалов.
+            </p>
           </div>
 
-          <h1 className="mt-2 text-[80px] font-normal leading-[110%] text-primary">
-            Цифровое материаловедение
-          </h1>
+          <div className="hidden lg:flex lg:shrink-0 lg:w-[400px] xl:w-[450px] lg:justify-center">
+            <img
+              src={atom}
+              alt=""
+              className="pointer-events-none select-none w-full h-auto"
+            />
+          </div>
 
-          <div className="mt-8 flex items-start justify-between gap-12">
-            <div className="w-[520px]">
-              <p className="max-w-[420px] text-[18px] leading-[150%] text-slate-600">
-                Поддержка деятельности Головного центра компетенций в области материалов
-                и технологий при реализации хранения, анализа и расчета значений свойств
-                существующих и проектирования новых материалов.
-              </p>
-            </div>
-
-            <div className="flex w-[360px] flex-col gap-6">
-              <NavCard title="Материалы" count="523" />
-              <NavCard title="Полуфабрикаты" count="523" />
-              <NavCard title="Свойства" count="523" />
-            </div>
+          <div className="shrink-0 w-[320px] md:w-[360px] flex flex-col gap-6">
+            <NavCard title="Материалы" count="523" />
+            <NavCard title="Полуфабрикаты" count="523" />
+            <NavCard title="Свойства" count="523" />
           </div>
         </div>
       </div>

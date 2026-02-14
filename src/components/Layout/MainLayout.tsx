@@ -1,33 +1,41 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Outlet } from "react-router-dom";
 import LeftMenu from "../LeftMenu/LeftMenu";
+import SecondaryLeftPanel from "../SecondaryLeftPanel/SecondaryLeftPanel";
 import { TopMenu } from "../TopMenu/TopMenu";
 
-const HEADER_H = 80;
+type TMainLayoutProps = {
+  secondary?: ReactNode;
+  rightSlot?: ReactNode;
+};
 
-export default function MainLayout() {
+export default function MainLayout({ secondary, rightSlot }: TMainLayoutProps) {
   const [isSecondaryOpen, setIsSecondaryOpen] = useState(true);
 
   return (
-    <div className="min-h-screen bg-[#F5F7FA]">
-      <div
-        className="fixed left-0 right-0 top-0 border-b border-slate-200"
-        style={{ height: HEADER_H }}
+    <div className="min-h-screen bg-[#F5F7FA] flex">
+      <LeftMenu
+        isSecondaryOpen={isSecondaryOpen}
+        onToggleSecondary={() => setIsSecondaryOpen((value) => !value)}
       />
 
-      <div className="flex min-h-screen">
-        <LeftMenu
-          isSecondaryOpen={isSecondaryOpen}
-          onToggleSecondary={() => setIsSecondaryOpen((value) => !value)}
-        />
+      <div className="flex flex-1 flex-col">
+        <TopMenu variant="app" />
 
-        <div className="flex min-h-screen flex-1 flex-col">
-          <TopMenu variant="app" />
+        <div className="flex flex-1 pt-[34px] gap-8">
+          <SecondaryLeftPanel isOpen={isSecondaryOpen}>
+            {secondary}
+          </SecondaryLeftPanel>
 
-          <div className="flex-1">
+          <main className="flex-1">
             <Outlet />
-          </div>
+          </main>
 
+          {rightSlot ? (
+            <aside className="shrink-0 w-[320px] pr-8">
+              {rightSlot}
+            </aside>
+          ) : null}
         </div>
       </div>
     </div>

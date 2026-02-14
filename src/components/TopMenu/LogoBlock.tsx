@@ -1,6 +1,6 @@
-import { Icon, HomeLogo, AuthLogo, AppLogo } from "@/ui/icons";
+import { Icon, HomeLogo, AppLogo } from "@/ui/icons";
 
-export type LogoVariant = "app" | "public" | "auth";
+export type LogoVariant = "app" | "public";
 
 const LOGO_CONFIG: Record<
   LogoVariant,
@@ -16,10 +16,6 @@ const LOGO_CONFIG: Record<
   public: {
     component: HomeLogo,
     className: "h-[90px] w-[220px]",
-  },
-  auth: {
-    component: AuthLogo,
-    className: "h-[75px] w-[190px]",
   },
 };
 

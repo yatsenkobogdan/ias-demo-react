@@ -2,7 +2,7 @@ import { Icon, DoubleChevronLeftIcon, InfoIcon } from "@/ui/icons";
 
 export default function RightSidebar() {
   return (
-    <aside className="w-[368px] shrink-0">
+    <aside className="shrink-0">
       <div className="sticky top-24 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
 
         <div className="flex items-start gap-3">

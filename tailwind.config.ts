@@ -12,6 +12,7 @@ export default {
         md7: "7px",
       },
       fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
     },

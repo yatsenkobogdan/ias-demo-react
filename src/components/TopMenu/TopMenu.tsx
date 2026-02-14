@@ -5,7 +5,7 @@ import { LoginButton } from "./LoginButton";
 import { AuthedActions } from "./AuthedActions";
 
 type TTopMenuProps = {
-  variant: "app" | "public" | "auth";
+  variant: "app" | "public";
 };
 
 export function TopMenu({ variant }: TTopMenuProps) {

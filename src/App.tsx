@@ -1,13 +1,12 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import PublicLayout from "./components/Layout/PublicLayout";
 import AuthLayout from "./components/Layout/AuthLayout";
-import MainLayout from "./components/Layout/MainLayout";
-
 import { HomePage } from "./pages/HomePage/HomePage";
 import { LoginPage } from "./pages/AuthPage/LoginPage";
 import MaterialPage from "./pages/MaterialPage/MaterialPage";
 
 import { ProtectedRoute } from "./app/ProtectedRoute";
+import MaterialLayout from "./pages/MaterialPage/components/MaterialLayout";
 
 export default function App() {
   return (
@@ -21,7 +20,7 @@ export default function App() {
       </Route>
 
       <Route element={<ProtectedRoute />}>
-        <Route element={<MainLayout />}>
+        <Route element={<MaterialLayout />}>
           <Route path="/material/:id" element={<MaterialPage />} />
         </Route>
       </Route>
