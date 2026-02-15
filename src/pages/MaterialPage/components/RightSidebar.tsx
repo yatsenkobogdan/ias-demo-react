@@ -2,8 +2,8 @@ import { Icon, DoubleChevronLeftIcon, InfoIcon } from "@/ui/icons";
 
 export default function RightSidebar() {
   return (
-    <aside className="shrink-0">
-      <div className="sticky top-24 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <aside className="sticky top-22 self-start shrink-0">
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
 
         <div className="flex items-start gap-3">
           <button

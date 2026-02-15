@@ -10,7 +10,7 @@ export function AuthedActions() {
   }
 
   return (
-    <div className="flex min-w-0 flex-wrap items-center justify-end gap-3">
+    <div className="flex w-full flex-wrap items-center justify-between gap-3">
       <div className="flex items-center gap-3">
         <IconButton type="button" aria-label="Раскрыть список">
           <Icon icon={HorizontalBurgerIcon} size={20} />

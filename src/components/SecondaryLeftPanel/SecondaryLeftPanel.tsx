@@ -11,7 +11,7 @@ export default function SecondaryLeftPanel({ isOpen, children }: TSecondaryLeftP
   return (
     <aside
       className={clsx(
-        "shrink-0 transition-[width] duration-100",
+        "sticky self-start top-22 shrink-0 transition-[width] duration-100",
         "ml-8",
         isOpen ? "w-[264px]" : "w-0"
       )}
