@@ -1,9 +1,9 @@
-import type { BaseTableColumn } from "@/components/Table/BaseTable";
+import type { TBaseTableColumn } from "@/components/Table/BaseTable";
 import BaseTable from "@/components/Table/BaseTable";
 
 type TRow = { label: string; value: string };
 
-const columns: BaseTableColumn<TRow>[] = [
+const columns: TBaseTableColumn<TRow>[] = [
   {
     key: "label",
     cell: (row) => (

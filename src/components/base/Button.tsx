@@ -9,7 +9,7 @@ export function Button({ variant = "primary", className, ...props }: TButtonProp
   return (
     <button
       {...props}
-      className={clsx("w-full h-[50px] rounded-md7 font-montserrat font-bold text-[15px] uppercase transition",
+      className={clsx("w-full h-[50px] rounded-md7 font-sans font-bold text-[15px] uppercase transition",
       variant === "primary" && "bg-primary text-white hover:opacity-95",
       className
       )}

@@ -29,16 +29,16 @@ export default function MaterialCardHeader({
 }: TMaterialCardHeaderProps) {
   return (
     <div className="flex gap-6">
-      <div className="w-[160px] shrink-0">
+      <div className="w-[230px] shrink-0">
         <img
           src={imageSrc}
           alt={title}
-          className="h-[130px] w-[230px] rounded-xl object-cover"
+          className="h-[130px] w-full rounded-xl object-cover"
         />
 
         {sourceLabel && (
-          <div className="mt-3 inline-flex items-center gap-2 rounded-md border border-slate-200 px-3 py-1 text-xs text-primary">
-            <Icon icon={DownloadIcon} className="h-10 w-auto" title="IAS" />
+          <div className="w-full mt-3 py-1 inline-flex items-center justify-center gap-2 rounded-md bg-[#F9F9F9] text-xs text-primary">
+            <Icon icon={DownloadIcon} size={20} className="h-8" title="source" />
             {sourceLabel}
             {sourceCount ? (
               <span className="rounded-full bg-primary px-2 py-[2px] text-[10px] text-white">

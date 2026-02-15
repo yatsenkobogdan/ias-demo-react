@@ -9,7 +9,7 @@ export function Input({ label, className, ...props }: TInputProps) {
   return (
     <div>
       {label && (
-        <label className="block font-montserrat text-[15px] font-medium text-slate-800">
+        <label className="block font-sans text-[15px] font-medium text-slate-800">
           {label}
         </label>
       )}
@@ -17,7 +17,7 @@ export function Input({ label, className, ...props }: TInputProps) {
       <input
         {...props}
         className={clsx(
-          "mt-2 w-full h-[50px] rounded-md7 border border-inputBorder px-3 font-montserrat text-[15px] outline-none",
+          "mt-2 w-full h-[50px] rounded-md7 border border-inputBorder px-3 font-sans text-[15px] outline-none",
           "focus:border-slate-400",
           className
         )}

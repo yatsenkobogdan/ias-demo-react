@@ -27,7 +27,7 @@ export function LoginPage() {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="w-[410px] bg-white border border-inputBorder rounded-md7 p-8 font-montserrat">
+      <div className="w-[410px] bg-white border border-inputBorder rounded-md7 p-8 font-sans">
         
         <h1 className="text-center text-[22px] font-semibold">
           Войти

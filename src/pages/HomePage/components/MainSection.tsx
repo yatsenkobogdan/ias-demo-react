@@ -9,20 +9,20 @@ export default function MainSection() {
           Информационно-аналитическая система
         </div>
 
-        <h1 className="mt-2 text-[52px] leading-[105%] text-primary md:text-[80px]">
+        <h1 className="mt-2 text-[52px] leading-[105%] text-primary md:text-[50px] lg:text-[65px] xl:text-[70px]">
           Цифровое материаловедение
         </h1>
 
         <div className="mt-6 flex items-start justify-between gap-8">
-          <div className="min-w-0 flex-1">
-            <p className="max-w-[520px] text-[16px] leading-[150%] text-slate-600 md:text-[18px]">
+          <div className="max-w-[520px] min-w-[200px] md:shrink-0 flex-1">
+            <p className="text-[16px] leading-[150%] text-slate-600">
               Поддержка деятельности Головного центра компетенций в области материалов
               и технологий при реализации хранения, анализа и расчета значений свойств
               существующих и проектирования новых материалов.
             </p>
           </div>
 
-          <div className="hidden lg:flex lg:shrink-0 lg:w-[400px] xl:w-[450px] lg:justify-center">
+          <div className="hidden lg:flex lg:shrink-0 lg:w-[450px] lg:justify-center">
             <img
               src={atom}
               alt=""

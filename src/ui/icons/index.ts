@@ -18,7 +18,6 @@ export { default as SomeSquareAndCircleIcon } from "@/assets/icons/someSquareAnd
 export { default as DoubleChevronLeftIcon } from "@/assets/icons/doubleChevronLeft.svg?react";
 export { default as InfoIcon } from "@/assets/icons/info.svg?react";
 
-
 // header icons
 export { default as AddIcon } from "@/assets/icons/add.svg?react";
 export { default as HorizontalBurgerIcon } from "@/assets/icons/horizontalBurger.svg?react";
@@ -31,3 +30,8 @@ export { default as LinkIcon } from "@/assets/icons/link.svg?react";
 export { default as BookmarkIcon } from "@/assets/icons/bookmark.svg?react";
 export { default as ChatIcon } from "@/assets/icons/chat.svg?react";
 export { default as WarningIcon } from "@/assets/icons/warning.svg?react";
+export { default as DescIcon } from "@/assets/icons/desc.svg?react";
+export { default as TabletIcon } from "@/assets/icons/tablet.svg?react";
+export { default as IndicatorsIcon } from "@/assets/icons/indicators.svg?react";
+export { default as CollsIcon } from "@/assets/icons/colls.svg?react";
+export { default as FilterIcon } from "@/assets/icons/filter.svg?react";

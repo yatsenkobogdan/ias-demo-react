@@ -2,6 +2,11 @@ import { Card } from "@/components/Card/Card";
 import MaterialCardHeader from "./MaterialCardHeader";
 import AttributesTable from "./tables/AttributesTable";
 import ChemistrySection from "./sections/ChemistrySection";
+import SourceSubstancesSection from "./sections/SourceSubstanceSection";
+import AggregatedPropertiesSection from "./sections/AggregatedPropertiesSection";
+import PropertyGroupsSection from "./sections/PropertyGroupsSection";
+import SemiFinishedProductsSection from "./sections/SemiFinishedProductsSection";
+import ManufacturersSection from "./sections/ManufacturersSection";
 
 type TMaterialCardProps = {
   imageSrc: string;
@@ -21,6 +26,16 @@ export default function MaterialCard(props: TMaterialCardProps) {
       <AttributesTable  />
       
       <ChemistrySection />
+
+      <SourceSubstancesSection />
+
+      <AggregatedPropertiesSection />
+
+      <PropertyGroupsSection />
+
+      <SemiFinishedProductsSection />
+
+      <ManufacturersSection />
     </Card>
   );
 }

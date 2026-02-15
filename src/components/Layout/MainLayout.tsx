@@ -22,7 +22,7 @@ export default function MainLayout({ secondary, rightSlot }: TMainLayoutProps) {
       <div className="flex flex-1 flex-col">
         <TopMenu variant="app" />
 
-        <div className="flex flex-1 pt-[34px] gap-8">
+        <div className="flex flex-1 pt-[24px]">
           <SecondaryLeftPanel isOpen={isSecondaryOpen}>
             {secondary}
           </SecondaryLeftPanel>
@@ -32,7 +32,7 @@ export default function MainLayout({ secondary, rightSlot }: TMainLayoutProps) {
           </main>
 
           {rightSlot ? (
-            <aside className="shrink-0 w-[320px] pr-8">
+            <aside className="shrink-0 w-[320px] ml-[24px] pr-8">
               {rightSlot}
             </aside>
           ) : null}

@@ -1,14 +1,14 @@
-import type { BaseTableColumn } from "@/components/Table/BaseTable";
+import type { TBaseTableColumn } from "@/components/Table/BaseTable";
 import BaseTable from "@/components/Table/BaseTable";
 import type { ChemistryRow } from "@/mocks/chemistryTableContent";
 
 
-type Props = {
+type TChemistryTableProps = {
   rows: ChemistryRow[];
 };
 
-export default function ChemistryTable({ rows }: Props) {
-  const columns: BaseTableColumn<ChemistryRow>[] = [
+export default function ChemistryTable({ rows }: TChemistryTableProps) {
+  const columns: TBaseTableColumn<ChemistryRow>[] = [
     {
       key: "property",
       header: (
