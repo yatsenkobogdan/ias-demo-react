@@ -38,7 +38,7 @@ export default function ManufacturersTable() {
           </div>
         );
       },
-      tdClassName: "min-w-[280px] align-top",
+      tdClassName: "w-[280px] align-top",
     },
     {
       key: "status",

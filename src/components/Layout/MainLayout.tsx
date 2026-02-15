@@ -16,23 +16,28 @@ export default function MainLayout({ secondary, rightSlot }: TMainLayoutProps) {
     <div className="min-h-screen bg-[#F5F7FA] flex">
       <LeftMenu
         isSecondaryOpen={isSecondaryOpen}
-        onToggleSecondary={() => setIsSecondaryOpen((value) => !value)}
+        onToggleSecondary={() => {
+          setIsSecondaryOpen((value) => !value);
+        }}
       />
 
-      <div className="flex flex-1 flex-col">
+      <div className="flex flex-1 min-w-0 flex-col">
         <TopMenu variant="app" />
 
-        <div className="flex flex-1 pt-[24px]">
+        {/* было: flex flex-1 pt-[24px] */}
+        <div className="flex flex-1 min-w-0 flex-col gap-6 pt-[24px] lg:flex-row lg:gap-0">
           <SecondaryLeftPanel isOpen={isSecondaryOpen}>
             {secondary}
           </SecondaryLeftPanel>
 
-          <main className="flex-1">
+          {/* важно min-w-0 */}
+          <main className="flex-1 min-w-0 lg:pl-[18px]">
             <Outlet />
           </main>
 
           {rightSlot ? (
-            <aside className="shrink-0 w-[320px] ml-[24px] pr-8">
+            // скрываем на узких (иначе будет всегда отъедать 320px)
+            <aside className="hidden xl:block shrink-0 w-[320px] ml-[24px] pr-8">
               {rightSlot}
             </aside>
           ) : null}
@@ -41,3 +46,4 @@ export default function MainLayout({ secondary, rightSlot }: TMainLayoutProps) {
     </div>
   );
 }
+
