@@ -23,6 +23,7 @@ export { default as AddIcon } from "@/assets/icons/add.svg?react";
 export { default as HorizontalBurgerIcon } from "@/assets/icons/horizontalBurger.svg?react";
 export { default as BellIcon } from "@/assets/icons/bell.svg?react";
 export { default as MoonIcon } from "@/assets/icons/moon.svg?react";
+export { default as ChemSearchIcon } from "@/assets/icons/chemSearch.svg?react";
 
 // Card Icons
 export { default as DownloadIcon } from "@/assets/icons/download.svg?react";

@@ -1,0 +1,6 @@
+services:
+  indigo:
+    image: epmlsop/indigo-service:latest
+    container_name: indigo_service
+    ports:
+      - "8002:80"

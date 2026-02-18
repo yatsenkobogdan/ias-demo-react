@@ -2,6 +2,7 @@ import { Session } from "@/services/Session";
 import { UserMenu } from "./UserMenu";
 import IconButton from "../base/IconButton";
 import { AddIcon, BellIcon, HorizontalBurgerIcon, Icon, MoonIcon } from "@/ui/icons";
+import MaterialSearchInput from "../Search/SearchInput";
 
 export function AuthedActions() {
   const user = Session.getUser();
@@ -19,6 +20,10 @@ export function AuthedActions() {
         <IconButton type="button" aria-label="Добавить">
           <Icon icon={AddIcon} size={20} />
         </IconButton>
+      </div>
+
+      <div className="flex flex-1 justify-center px-3">
+        <MaterialSearchInput className="w-full" />
       </div>
 
       <div className="flex items-center gap-3">
