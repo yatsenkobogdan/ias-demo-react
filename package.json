@@ -13,6 +13,7 @@
     "clsx": "^2.1.1",
     "ketcher-react": "^3.7.0",
     "ketcher-standalone": "^3.7.0",
+    "keycloak-js": "^26.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^7.13.0",

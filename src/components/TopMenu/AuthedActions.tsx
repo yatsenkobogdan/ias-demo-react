@@ -36,10 +36,10 @@ export function AuthedActions() {
         </IconButton>
 
         <button className="rounded-md7 bg-primary px-3 py-2 text-xs font-semibold text-white">
-          {user.org ?? "Организация"}
+          Организация
         </button>
 
-        <UserMenu name={user.name ?? "Пользователь"} role={user.role ?? "Роль"} />
+        <UserMenu name={user.name ?? "Пользователь"} role="Роль" />
       </div>
     </div>
   );

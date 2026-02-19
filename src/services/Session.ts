@@ -1,31 +1,23 @@
-const USER_KEY = "ias_demo_user";
+import { keycloak } from "./auth/keycloak";
 
 export type TSessionUser = {
-  name: string;
-  email: string;
-  role?: string;
-  org?: string;
+  name?: string;
+  email?: string;
+  username?: string;
 };
 
 export const Session = {
-  setUser(user: TSessionUser) {
-    localStorage.setItem(USER_KEY, JSON.stringify(user));
-  },
-
   getUser(): TSessionUser | null {
-    const raw = localStorage.getItem(USER_KEY);
-    if (!raw) {
+    const tokenParsed: any = keycloak.tokenParsed;
+
+    if (!tokenParsed) {
       return null;
     }
 
-    try {
-      return JSON.parse(raw) as TSessionUser;
-    } catch {
-      return null;
-    }
-  },
-
-  clearUser() {
-    localStorage.removeItem(USER_KEY);
+    return {
+      name: tokenParsed.name,
+      email: tokenParsed.email,
+      username: tokenParsed.preferred_username,
+    };
   },
 };

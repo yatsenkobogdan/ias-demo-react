@@ -1,68 +1,24 @@
-
-import { Button } from "@/components/base/Button";
-import { Input } from "@/components/base/Input";
-import { Auth } from "@/services/Auth";
-import { login } from "@/services/fetchers/authFetcher";
-import { Session } from "@/services/Session";
-import { useState, type FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { login } from "@/services/auth/auth";
 
 export function LoginPage() {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  
-  async function onSubmit(e: FormEvent) {
-    e.preventDefault();
-
-    try {
-      const res = await login({ email, password });
-      Auth.setToken(res.token);
-      Session.setUser(res.user);
-      navigate("/material/1", { replace: true }); 
-    } catch (e) {
-      console.error(e)
-    }
-  }
-
   return (
     <div className="w-full flex justify-center">
       <div className="w-[410px] bg-white border border-inputBorder rounded-md7 p-8 font-sans">
-        
-        <h1 className="text-center text-[22px] font-semibold">
-          Войти
-        </h1>
+        <h1 className="text-center text-[22px] font-semibold">Войти</h1>
 
         <p className="mt-2 text-center text-[15px] font-medium leading-[140%]">
-          Если Вы не авторизовались, заполните форму
-          <br />
-          для регистрации
+          Авторизация через корпоративный SSO
         </p>
 
-        <form className="mt-6 space-y-6" onSubmit={onSubmit}>
-          <Input
-            label="Электронный адрес"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="mail@mail.ru"
-          />
-
-          <Input
-            type="password"
-            label="Пароль"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="пароль"
-          />
-
-          <div className="text-center">
-            <a className="text-[15px] font-medium underline text-primary">
-              Зарегистрироваться
-            </a>
-          </div>
-
-          <Button>ВОЙТИ</Button>
-        </form>
+        <div className="mt-6">
+          <button
+            type="button"
+            className="w-full rounded-md7 bg-primary px-4 py-2 text-white"
+            onClick={() => void login({ redirectUri: new URL("/material/1", window.location.origin).toString() })}
+          >
+            ВОЙТИ
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,15 +1,15 @@
-import { Auth } from "@/services/Auth";
 import { Link } from "react-router-dom";
 import { LogoBlock } from "./LogoBlock";
 import { LoginButton } from "./LoginButton";
 import { AuthedActions } from "./AuthedActions";
+import { useAuth } from "@/hooks/useAuth";
 
 type TTopMenuProps = {
   variant: "app" | "public";
 };
 
 export function TopMenu({ variant }: TTopMenuProps) {
-  const isAuth = Auth.isAuth();
+  const { authenticated } = useAuth();
 
   const isPublic = variant === "public";
   const isApp = variant === "app";
@@ -18,9 +18,14 @@ export function TopMenu({ variant }: TTopMenuProps) {
     if (isPublic) {
       return <LoginButton />;
     }
+
     if (isApp) {
-      return isAuth ? <AuthedActions /> : <LoginButton />;
+      if (authenticated) {
+        return <AuthedActions />;
+      }
+      return null;
     }
+
     return null;
   })();
 

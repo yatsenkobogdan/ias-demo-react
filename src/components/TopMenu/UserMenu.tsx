@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Auth } from "@/services/Auth";
-import { Session } from "@/services/Session";
+import { logout } from "@/services/auth/auth";
 
 type TUserMenuProps = {
   name: string;
@@ -11,34 +9,36 @@ type TUserMenuProps = {
 export function UserMenu({ name, role }: TUserMenuProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
-  const navigate = useNavigate();
 
-  const logout = () => {
-    Auth.clearToken();
-    Session.clearUser();
-    navigate("/login", { replace: true });
-  }
+  const onLogout = async () => {
+    setOpen(false);
+    await logout();
+  };
 
   useEffect(() => {
     const onMouseDown = (event: MouseEvent) => {
-      const element = rootRef.current;
-      if (!element) {
+      const rootElement = rootRef.current;
+
+      if (!rootElement) {
         return;
       }
-      if (event.target instanceof Node && !element.contains(event.target)) {
+
+      if (event.target instanceof Node && !rootElement.contains(event.target)) {
         setOpen(false);
       }
-    }
+    };
+
     document.addEventListener("mousedown", onMouseDown);
     return () => document.removeEventListener("mousedown", onMouseDown);
   }, []);
 
   useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
+    const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setOpen(false);
       }
-    }
+    };
+
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
   }, []);
@@ -58,17 +58,17 @@ export function UserMenu({ name, role }: TUserMenuProps) {
         <span className="ml-1 text-slate-400">▾</span>
       </button>
 
-      {open && (
+      {open ? (
         <div className="absolute right-0 z-50 mt-2 w-44 rounded-md border border-slate-200 bg-white p-1 shadow-md">
           <button
             type="button"
-            onClick={logout}
+            onClick={() => void onLogout()}
             className="w-full rounded-md px-3 py-2 text-left text-sm hover:bg-slate-50"
           >
             Выйти
           </button>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

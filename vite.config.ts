@@ -29,6 +29,10 @@ export default defineConfig({
   },
 
   server: {
+    host: true,
+    port: 80,
+    strictPort: true,
+    allowedHosts: ["localhost"],
     proxy: {
       "/indigo": {
         target: "http://localhost:8002",
