@@ -2,6 +2,7 @@ import { useState } from "react";
 import clsx from "clsx";
 import ChemicalSearchEditorModal from "../ChemicalSearchEditor/ChemicalSearchEditorModal";
 import { ChemSearchIcon, Icon } from "@/ui/icons";
+import Tooltip from "../base/Tooltip/Tooltip";
 
 type TSearchInputProps = {
   className?: string;
@@ -24,14 +25,17 @@ export default function MaterialSearchInput({ className }: TSearchInputProps) {
           )}
         />
 
-        <button
-          type="button"
-          aria-label="Открыть поиск по структуре"
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md7 p-2 hover:bg-slate-100"
-          onClick={() => setKetcherOpen(true)}
-        >
-          <Icon icon={ChemSearchIcon} size={18} />
-        </button>
+        <Tooltip content="Ввод структуры вещества" placement="bottom">
+          <button
+            type="button"
+            aria-label="Открыть поиск по структуре"
+            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md7 p-2 hover:bg-slate-100"
+            onClick={() => setKetcherOpen(true)}
+          >
+            <Icon icon={ChemSearchIcon} size={18} />
+          </button>
+        </Tooltip>
+        
       </div>
 
       <ChemicalSearchEditorModal

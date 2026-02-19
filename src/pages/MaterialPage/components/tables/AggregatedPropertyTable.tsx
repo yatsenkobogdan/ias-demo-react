@@ -1,6 +1,6 @@
 import BaseTable from "@/components/Table/BaseTable";
 import type { TBaseTableColumn } from "@/components/Table/BaseTable";
-import Tooltip from "@/components/Tooltip/Tooltip";
+import Tooltip from "@/components/base/Tooltip/Tooltip";
 import { DescIcon, Icon, InfoIcon } from "@/ui/icons";
 import {
   AGGREGATED_PROPERTY_ROWS,
