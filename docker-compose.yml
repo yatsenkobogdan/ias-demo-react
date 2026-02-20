@@ -4,3 +4,13 @@ services:
     container_name: indigo_service
     ports:
       - "8002:80"
+
+  ias-react-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ias_react_demo
+    ports:
+      - "80:80"
+    depends_on:
+      - indigo
