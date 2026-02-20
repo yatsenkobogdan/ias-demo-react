@@ -34,7 +34,7 @@ export function useAuth() {
   }, []);
 
   async function logout() {
-    await authLogout({ redirectUri: window.location.origin + "/" });
+    await authLogout();
   }
 
   return {

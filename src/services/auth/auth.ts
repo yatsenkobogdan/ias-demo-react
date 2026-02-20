@@ -97,7 +97,7 @@ export async function login(options?: { redirectUri?: string }) {
   return keycloak.login({ redirectUri });
 }
 
-export async function logout(options?: { redirectUri?: string }) {
+export async function logout() {
   await ensureInitialized();
 
   const redirectUri = new URL("/login", window.location.origin).toString();
