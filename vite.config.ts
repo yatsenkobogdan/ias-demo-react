@@ -5,41 +5,24 @@ import svgr from "vite-plugin-svgr";
 import path from "node:path";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     tailwindcss(),
     svgr(),
     nodePolyfills({
-      globals: {
-        process: true,
-        Buffer: true,
-      },
+      globals: { process: true, Buffer: true },
     }),
   ],
 
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    alias: { "@": path.resolve(__dirname, "./src") },
   },
 
   define: {
-    "process.env": {},
-  },
-
-  server: {
-    host: true,
-    port: 80,
-    strictPort: true,
-    allowedHosts: ["app1.cm.local", "sso.cm.local"],
-    proxy: {
-      "/indigo": {
-        target: "http://localhost:8002",
-        changeOrigin: true,
-        rewrite: (p) => p.replace(/^\/indigo/, ""),
-      },
-    },
+    "process.env.NODE_ENV": JSON.stringify(
+      mode === "production" ? "production" : "development"
+    ),
   },
 
   optimizeDeps: {
@@ -49,8 +32,8 @@ export default defineConfig({
   build: {
     sourcemap: false,
     commonjsOptions: {
-      include: [/ketcher-react/, /ketcher-standalone/, /raphael/, /node_modules/],
+      include: [/node_modules/],
       transformMixedEsModules: true,
     },
   },
-});
+}));
