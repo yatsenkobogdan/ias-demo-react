@@ -13,5 +13,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - C:/certs/cm-local:/etc/nginx/certs:ro
     depends_on:
       - indigo
