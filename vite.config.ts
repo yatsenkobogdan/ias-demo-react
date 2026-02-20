@@ -47,6 +47,7 @@ export default defineConfig({
   },
 
   build: {
+    sourcemap: false,
     commonjsOptions: {
       include: [/ketcher-react/, /ketcher-standalone/, /raphael/, /node_modules/],
       transformMixedEsModules: true,

@@ -1,5 +1,3 @@
-// src/mocks/propertyGroupsTableContent.ts
-
 export const PROPERTY_GROUPS_MAX = {
   extruded: 5,
   stamping: 6,
