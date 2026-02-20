@@ -1,7 +1,7 @@
 import Keycloak from "keycloak-js";
 
 export const keycloak = new Keycloak({
-  url: "http://172.22.5.121:18080",
+  url: "https://sso.cm.local",
   realm: "uni",
   clientId: "react-spa",
 });

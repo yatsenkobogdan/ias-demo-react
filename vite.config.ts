@@ -32,7 +32,7 @@ export default defineConfig({
     host: true,
     port: 80,
     strictPort: true,
-    allowedHosts: ["localhost"],
+    allowedHosts: ["app1.cm.local", "sso.cm.local"],
     proxy: {
       "/indigo": {
         target: "http://localhost:8002",

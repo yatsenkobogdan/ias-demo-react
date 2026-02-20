@@ -59,23 +59,24 @@ function getUserFromTokenParsed(): AuthUser | null {
 }
 
 export async function ensureInitialized(): Promise<boolean> {
+  console.log("INIT STARTED")
+
   if (initPromise) {
     return initPromise;
   }
 
   initPromise = (async () => {
-    let authenticated = false;
-
     try {
-      authenticated = await keycloak.init({
+      const authenticated = await keycloak.init({
+        onLoad: "check-sso",
         pkceMethod: "S256",
       });
-    } catch {
-      authenticated = false;
-    }
 
-    startTokenRefreshTimer();
-    return authenticated;
+      startTokenRefreshTimer();
+      return authenticated;
+    } catch {
+      return false;
+    }
   })();
 
   return initPromise;
